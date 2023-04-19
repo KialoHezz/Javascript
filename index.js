@@ -56,12 +56,62 @@ const prompt=require("prompt-sync")({sigint:true});
 // <= >= - greate than or equal to and less than or equal to
 // != not or equal to
 // !== not equal value or type
-let Weather = prompt("Enter weather in your region: ")
+// let Weather = prompt("Enter weather in your region: ")
 
-if (Weather == 'rain'){
-    console.log('grab your umbrella');
-}else{
-    console.log('wear your sunglassess');
+// if (Weather == 'rain'){
+//     console.log('grab your umbrella');
+// }else{
+//     console.log('wear your sunglassess');
+// }
+
+
+//  LESSON 3: Functions => is a block of code
+//  Basic of functions
+//  Dynamic functions
+//  tip Calculator App
+
+ function sayName(){
+    console.log("Hezron");
+ }
+//  Invoke or call the function
+//  sayName()
+
+//  dynamic
+function sayMayName(name){
+    console.log(name);
 }
 
+// sayMayName("hezron");
 
+// functions arquments
+// Template literals provide an easy way to interpolate variables and expression into strings
+
+// interpolation is an efficient way of concatenation
+
+function greeting(name){
+    // greet = "Hi" + " " + name;
+    // template literals `` and string interpolation
+    greet = `Hi ${name}, Nice to meet you`
+    console.log(greet);
+}
+// greeting("Hezron");
+
+// Return statement stops the execution and return a value
+
+function sum(a, b){
+    // return
+
+    return a + b;
+}
+
+// sum(4, 5);
+
+// ES6 ARROW FUNCTIONS with explicit
+const sumArrow = (a, b) => {
+    return a + b;
+}
+
+//  arrow function with implicit return => remove curl brackets
+const sumA = (a, b) => a + b;
+
+console.log(sumA(1, 2));
