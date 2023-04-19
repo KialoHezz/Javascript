@@ -114,4 +114,37 @@ const sumArrow = (a, b) => {
 //  arrow function with implicit return => remove curl brackets
 const sumA = (a, b) => a + b;
 
-console.log(sumA(1, 2));
+// console.log(sumA(1, 2));
+
+
+
+// LESSON 4: ARRAYS
+// BASIC
+// dYNAMIC FUNCTIONS
+// TIP CALCULATOR APP
+// BASIC OF ARRAYS
+const fruits = ["Mango", "Apple", "Banana", "Cucumber"];
+// console.log(fruits);
+// Access the value using property
+// The index gives you the the location of a value within an array. It's similar to a street number.
+// console.log(fruits[1]);
+
+// array method .push()
+// Adds one or more elements to the end of an array and returns the new legth of the array
+// e.g
+fruits.push("Orange")
+// console.log(fruits);
+
+// Array method .slice()
+//  return the portion of the array in a new array
+
+console.log(fruits.slice(2, 4));
+
+// Array method .iindexOf()
+// e.g
+console.log(fruits.indexOf("Mango"));
+
+// Array method .length
+// returns the element in array
+// e.g
+console.log(fruits.length);
