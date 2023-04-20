@@ -307,6 +307,73 @@ const wordFrequency = (phrase) => {
     return letterFrequency(words)
 }
 
-const userInput = prompt('Write your sentence: ')
+// const userInput = prompt('Write your sentence: ')
 
-console.log(wordFrequency(userInput));
+// console.log(wordFrequency(userInput));
+
+
+// LESSON 08: ARRAY METHODS 
+// HIGHER ORDER FUNCTIONS MAP(), FILTER(), REDUCE()
+// e.g map methods- loops and returns array and arrow
+// [1, 2, 3, 4].map(number => console.log(number));
+
+const doubleMap = (numbers) => {
+    return numbers.map(number => number * 2);
+}
+
+// console.log(doubleMap([1, 2, 3]));
+
+
+// e.g filter
+// [1, 2, 3, 4, 5, 6]
+
+const filter = (numbers, greaterThan) => {
+    // empty error
+    result = [];
+
+    for(let num in numbers){
+        if(num > greaterThan){
+            result.push(num);
+        }
+    }
+
+    return result;
+}
+
+// console.log(filter([1, 2, 3, 4, 5, 6, 7]), 3);
+// logical operator $$, ||, 
+
+const nums = [1, 2, 3, 4];
+
+// console.log(nums.filter(num => num > 2));
+
+// console.log(nums.filter(num => num > 2));
+// ARRAY OF OBJECTS
+const actors = [
+    {name: 'Johnny', netWorth: 2000000},
+    {name: 'Hezron', netWorth: 10 },
+    {name: 'Ngoma', netWorth: 20},
+]
+
+// let result = actors.filter(actor => actor.netWorth > 10);
+// let names = result.map(actor => actor.name).join(', ')
+
+// index.innerHTML = `<p>${names}</p>`
+
+
+// .reduce
+// SUM all of the net worths
+//  SUM: Think reduce
+// reduce takes in a function as an arqument
+// reduce loops and give you back the   accumulator
+
+const number = [1, 2, 3]
+
+// let result = number.reduce(function(prev, next){
+//     return prev + next
+// });
+
+// ES6 NOTATION
+
+let result = number.reduce((prev, next) => prev + next)
+console.log(result);
