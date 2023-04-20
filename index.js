@@ -123,7 +123,7 @@ const sumA = (a, b) => a + b;
 // dYNAMIC FUNCTIONS
 // TIP CALCULATOR APP
 // BASIC OF ARRAYS
-const fruits = ["Mango", "Apple", "Banana", "Cucumber"];
+// const fruits = ["Mango", "Apple", "Banana", "Cucumber"];
 // console.log(fruits);
 // Access the value using property
 // The index gives you the the location of a value within an array. It's similar to a street number.
@@ -132,19 +132,78 @@ const fruits = ["Mango", "Apple", "Banana", "Cucumber"];
 // array method .push()
 // Adds one or more elements to the end of an array and returns the new legth of the array
 // e.g
-fruits.push("Orange")
+// fruits.push("Orange")
 // console.log(fruits);
 
 // Array method .slice()
 //  return the portion of the array in a new array
 
-console.log(fruits.slice(2, 4));
+// console.log(fruits.slice(2, 4));
 
 // Array method .iindexOf()
 // e.g
-console.log(fruits.indexOf("Mango"));
+// console.log(fruits.indexOf("Mango"));
 
 // Array method .length
 // returns the element in array
 // e.g
-console.log(fruits.length);
+// console.log(fruits.length);
+
+
+// Lesson 5 :Objects
+// Objects are a type of variable, quite similar to arrays but they have someting called key-value
+
+// e.g
+const person = {
+    name: "hezron",
+    shirt: "White"
+}
+// Access a value => 1. dot notation and 2. Bracket notation
+
+console.log(person.shirt); //Dot notation
+console.log(person["shirt"]); //Bracket notation
+
+// assig object
+
+person.phone = '+2540070000'; //Dot notation
+// console.log(person);
+
+person["last"] = "Woow"; //Bracket notation
+console.log(person);
+
+// Arrow function , object, Template literals $ string interpolation
+const introducer = (name, shirt) => {
+    const person = {
+        name: name,
+        shirt: shirt,
+        assests: 100000,
+        liabilities: 50000,
+    }
+
+    const intro = `Hi my name is ${person.name} and the color of my shirt is ${person[shirt]} and my net worthy is ${person.assests - person.liabilities}`
+
+    return intro
+}
+
+console.log(introducer('Hezron', 'Black'));
+
+
+// Create methods - is a property containing a function definition
+
+const introduce = (name, shirt) => {
+    const person = {
+        name: name,
+        shirt: shirt,
+        assests: 100000,
+        liabilities: 50000,
+        netWorthy: function(){
+            return this.assests - this.liabilities;
+        }
+    }
+
+    const intro = `Hi my name is ${person.name} and the color of my shirt is ${person[shirt]} and my net worthy is ${person.netWorthy()}`
+
+    return intro
+}
+
+console.log(introduce('Hezron', 'Black'));
