@@ -223,5 +223,90 @@ const fruits = ["Banana", "Apple", "Mango"];
 // }
 
 for (const fruit of fruits){
-    console.log(fruit);
+    // console.log(fruit);
 }
+
+// [1, 2, 3, 4]
+// result = 0;
+// result = 1;
+// result = 3;
+// result = 6;
+// result = 10;
+
+const sumArray = (num) => {
+    let result = 0;
+    
+    // for looop
+    for (const number in num){
+        console.log(Number(number));
+        
+        result = result + Number(number);
+    }
+    
+    
+    return { result }
+}
+
+const num = [1, 2, 3, 4, 5]; //15
+// console.log(sumArray(num));
+
+
+
+
+//  loops, array , objects
+// Function to check which element in array is great than and output that element.
+const max = (numbers) => {
+    let result = numbers[0];
+    
+    // for loops
+    for (const number of numbers) {
+        if (number > result){
+            result = number
+        }
+    }
+    return {result}
+
+}
+
+// console.log(max([1, 2, 3, 4, 5, 1]));
+
+
+
+// function should return an object {'h': 2, 'a':2} when the function call.
+//  in => indexes
+// of => return the letters
+const letterFrequency = (phrase) => {
+    // make a frequency object {}
+    let frequency = {};
+    // console.log(phrase)
+    // for loop
+    for ( let letter of phrase){
+        // check if letter exist in frequency
+        if (letter in frequency){
+            // exist then increament the value y +1
+            // frequency[letter] = frequency[letter] + 1
+            // above statement in shorthand
+            frequency[letter] += 1
+            // otherwise, set the value to 1
+        }else{
+            frequency[letter] = 1
+        }
+    }
+
+    return frequency
+}
+
+// console.log(letterFrequency('hahaha'));
+
+// incremetor operators
+
+
+const wordFrequency = (phrase) => {
+    const words = phrase.split(' ');
+
+    return letterFrequency(words)
+}
+
+const userInput = prompt('Write your sentence: ')
+
+console.log(wordFrequency(userInput));
