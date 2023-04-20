@@ -160,8 +160,8 @@ const person = {
 }
 // Access a value => 1. dot notation and 2. Bracket notation
 
-console.log(person.shirt); //Dot notation
-console.log(person["shirt"]); //Bracket notation
+// console.log(person.shirt); //Dot notation
+// console.log(person["shirt"]); //Bracket notation
 
 // assig object
 
@@ -169,7 +169,7 @@ person.phone = '+2540070000'; //Dot notation
 // console.log(person);
 
 person["last"] = "Woow"; //Bracket notation
-console.log(person);
+// console.log(person);
 
 // Arrow function , object, Template literals $ string interpolation
 const introducer = (name, shirt) => {
@@ -185,7 +185,7 @@ const introducer = (name, shirt) => {
     return intro
 }
 
-console.log(introducer('Hezron', 'Black'));
+// console.log(introducer('Hezron', 'Black'));
 
 
 // Create methods - is a property containing a function definition
@@ -203,7 +203,25 @@ const introduce = (name, shirt) => {
 
     const intro = `Hi my name is ${person.name} and the color of my shirt is ${person[shirt]} and my net worthy is ${person.netWorthy()}`
 
+
     return intro
 }
 
-console.log(introduce('Hezron', 'Black'));
+// console.log(introduce('Hezron', 'Black'));
+
+
+// LESSON 06 : FOR LOOOPS
+const fruits = ["Banana", "Apple", "Mango"];
+
+// console.log(fruits[0]);
+// console.log(fruits[1]);
+// console.log(fruits[2]);
+
+// let i - is declare a variable , i=0 - initialize, i<fruits.length - condition, i++ - increment
+// for (let i=0; i<fruits.length; i++){
+//     console.log(i, fruits[i]);
+// }
+
+for (const fruit of fruits){
+    console.log(fruit);
+}
