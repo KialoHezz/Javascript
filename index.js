@@ -397,16 +397,49 @@ title.innerHTML = `<p>${message}</p>`
 title.style.color = 'red';
 
 
-let redDiv = document.getElementById("red");
-let yellowdiv = document.getElementById("yellow");
-let greenDiv = document.getElementById("green");
+// let redDiv = document.getElementById("red");
+// let yellowdiv = document.getElementById("yellow");
+// let greenDiv = document.getElementById("green");
 
-redDiv.onclick = () => {
-    console.log(' User Chose: Rock');
-    // getComputerChoice
-    // compare userChoice vs. computer choice => result
-    // -1 , 0, 1
-    // show everthing on the screen (DOM)
+// redDiv.onclick = () => {
+//     console.log(' User Chose: Rock');
+//     // getComputerChoice
+//     // compare userChoice vs. computer choice => result
+//     // -1 , 0, 1
+//     // show everthing on the screen (DOM)
+// }
+// yellowdiv.onclick = () => console.log('You clicked yellow')
+// greenDiv.onclick = () => console.log('You clicked green')
+
+// at console will get a nodelist{}
+const colorsquareBtn = document.getElementsByClassName("colorsquare");
+
+console.log(colorsquareBtn);
+
+// console.log(colorsquareBtn[0].value);
+// console.log(colorsquareBtn[1].value);
+// console.log(colorsquareBtn[2].value);
+
+
+// forEach
+const timesClicked = {'red': 0, 'yellow': 0, 'green': 0}
+
+colorsquareBtn.forEach(square => {
+    square.onclick = () => {
+        timesClicked[square.value] += 1;
+        square.innerText = timesClicked[square.value]
+        // console.log(square.value)
+    };
+});
+
+function clearScores(){
+    timesClicked.red = 0;
+    timesClicked.yellow = 0;
+    timesClicked.green = 0;
+        
+    square.forEach(square => {
+        square.innerText = '';
+    });
 }
-yellowdiv.onclick = () => console.log('You clicked yellow')
-greenDiv.onclick = () => console.log('You clicked green')
+const clearDiv = document.getElementById("clear");
+clearDiv.onclick = () => clearScores();
