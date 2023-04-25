@@ -1,29 +1,25 @@
-// dfn fetch
-// import fetch from "node-fetch";
-// API [Application programming interface]
-//**  and it lets you app communicate with other services to fetch data
+import fetch from "node-fetch";
 
-// 
-// URL  => https://dog.ceo/api/breeds/image/random
+const SUPERHERO = '1415420709270129';
+const BASE_URL = `https://superheroapi.com/api.php/${SUPERHERO}`
+let getNewHeroDiv = document.getElementById("getNewHero");
+let heroImageDiv = document.getElementById("heroImage");
 
-// querySelect
-const dogImageDiv = document.getElementById("dogImage");
-
-const dogButton = document.getElementById("dogButton");
-
-// get access
-// .then -> Promises
-// asynchronous programming
-
-const getNewDog = () => {
-  fetch('https://dog.ceo/api/breeds/image/random')
+const getSuperHero = (id, name) => {
+  fetch(`${BASE_URL}/${id}`)
     .then(response => response.json())
-    .then(json => {
-      console.log(json);
-  
-      dogImageDiv.innerHTML = `<img src='${json.message}' />`
+    .then(json =>{
+      console.log(json)
+      heroImageDiv.innerHTML = `<imag src='${json.image.url}' height=200 width=200>`
     })
-
+  
 }
 
-  dogButton.onclick = () => getNewDog();
+const randomHero = () =>  {
+  const numberOfHeroes = 731
+
+  return Math.floor(Math.random() * numberOfHeroes) + 1;
+}
+
+getNewHeroDiv.onclick = () => getSuperHero(randomHero );
+
