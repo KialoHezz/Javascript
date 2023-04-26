@@ -29,8 +29,10 @@ const getSearchSuperHero = (name) => {
     .then(response => response.json())
     .then(json =>{
       const hero = json.results[0]
-      console.log(hero )
-      heroImageDiv.innerHTML = `<imag src='${hero.image.url}' height=200 width=200>`
+      // console.log(hero )
+      const name = `<h2>${json.name}</h2>`
+      const intelligence = `<p> Intelligence: ${json.powerstats.intelligence}</p>`
+      heroImageDiv.innerHTML = `${name} <imag src='${hero.image.url}' height=200 width=200> ${intelligence}`
   })
 }
 
