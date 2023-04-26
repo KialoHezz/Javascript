@@ -30,11 +30,29 @@ const getSearchSuperHero = (name) => {
     .then(json =>{
       const hero = json.results[0]
       // console.log(hero )
-      const name = `<h2>${json.name}</h2>`
-      const intelligence = `<p> Intelligence: ${json.powerstats.intelligence}</p>`
-      heroImageDiv.innerHTML = `${name} <imag src='${hero.image.url}' height=200 width=200> ${intelligence}`
+      const superHero = json
+      showHeroInfo(superHero)
+     
   })
 }
+
+
+const showHeroInfo = (character) => {
+  const name = `<h2>${character.name}</h2>`
+  const img = `<imag src='${hero.image.url}' height=200 width=200>`
+
+  const stats = Object.keys(character.powerstats).map(stat => {
+    `<p>${stat}: ${character.powerstats[stat.toUpperCase()]}</p>`
+  }).join('')
+
+  // return an array of p tags
+  console.log(stats.join(""));
+
+  heroImageDiv.innerHTML = `${name} ${img} ${stats}`
+
+  return stats.join('')
+} 
+
 
 const randomHero = () =>  {
   const numberOfHeroes = 731
