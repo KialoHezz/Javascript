@@ -61,5 +61,10 @@ const promise = async() =>{
     }
 }
 
-promise().then(value => console.log(value))
+// extract the value from it.
+// there 2 ways to extract :
+// ** 1 EITHER you AWAIT which have to wrapper into ASYNC
+console.log(await promise());
+// ** 2 OR you use .then(value => console.log(value))
+console.log(promise().then(value => console.log(value)));
 
