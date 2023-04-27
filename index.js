@@ -33,8 +33,8 @@ const porsche = new Car('Porsche','yellow', 250)
 
 // add method into array datatype
 
-Array.prototype.myPush = function(){
-    this[3] = 'kiwa'
+Array.prototype.myPush = function(item){
+    this[this.length] = item
     return this
 }
 
@@ -42,4 +42,4 @@ Array.prototype.myPush = function(){
 const fruits = ["Banana", "Apple", "Mango"]
 
 
-console.log(fruits.myPush());
+console.log(fruits.myPush("nnana"));
