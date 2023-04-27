@@ -24,7 +24,7 @@ const promise1 = new Promise((resolve, reject) => {
     setTimeout(() => {
         let isReady
 
-        isReady = true;
+        isReady = false;
         // tenary operator
         isReady ? resolve('Soup is ready'): 
         reject('No soup today');
@@ -33,8 +33,12 @@ const promise1 = new Promise((resolve, reject) => {
 
 // excer
 const promise = async() =>{
-    const soup = await promise1
-    console.log(soup);
+    try{
+        const soup = await promise1
+        console.log(soup);
+    } catch (error){
+        console.log(error);
+    }
 }
 
 promise()
