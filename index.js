@@ -1,4 +1,6 @@
-// import fetch from "/node-fetch";
+import fetch from "/node-fetch";
+
+// const { default: fetch } = require("node-fetch");
 
 // Asychronous programming
 
@@ -63,8 +65,34 @@ const promiseTF = new Promise((resolve, reject) => {
     }, 2000)
 });
 
-console.log(promise2
-                .then(success => console.log({success}))
-                // below where error happens
-                .catch(Err => console.log({Err}))
-            )
+// console.log(promise2
+//                 .then(success => console.log({success}))
+//                 // below where error happens
+//                 .catch(Err => console.log({Err}))
+//             )
+
+
+// console.log('fetch:', 
+// fetch('https://dog.ceo/api/breeds/image/random')
+//     // get a response
+//     .then(response => console.log("response:" ,response.json()))
+//     .then(data => console.log({data}))
+
+// );
+
+
+// async &Await (asynchronous programmming)
+// RULES to use Async / await
+// ** 1. You must create a function *
+//  ** 2. you must use the keyword async
+// ** 3. use the word await
+
+const getDOg = async () => {
+    const url = 'https://dog.ceo/api/breeds/image/random';
+    // await is the same as .then(response => response.json())
+    const response = await fetch(url);
+    const data = await response.json()
+    console.log(data);
+}
+
+getDOg()
