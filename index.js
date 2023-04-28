@@ -141,7 +141,8 @@ let p1;
 let p2;
 
 // ** Create the game object from the Game class **
-
+let game = new Game()
+console.log(game);
 // ** Intialize the game by calling updateGame() **
 
 
