@@ -40,11 +40,14 @@ let p1NameDiv = document.getElementById('p1Name')
 let p2NameDiv = document.getElementById('p2Name')
 let p1HealthDiv = document.getElementById('p1Health')
 let p2HealthDiv = document.getElementById('p2Health')
-
+console.log(p1NameDiv.innerText);
 // ** Check if either players health is  0 and if it is, then update isOver to true **
 const updateGame = (p1,p2,gameState) => {
   // Update the DOM with the names and the latest health of players
-
+  p1NameDiv.innerText = p1.name
+  p2NameDiv.innerText = p2.name
+  p1HealthDiv.innerText = p1.health
+  p2HealthDiv.innerText = p2.health
   // Condition IF either player health is <= 0 then set isOver to true and declareWinner
 
 }
@@ -137,14 +140,15 @@ let player2 = new Player("Allan", 100, 10)
 console.log(player2.name);
 
 // ** Save original Player Data into a variable in order to reset **
-let p1;
-let p2;
+let p1 = player1
+let p2 = player2
 
 // ** Create the game object from the Game class **
 let game = new Game()
+
 console.log(game);
 // ** Intialize the game by calling updateGame() **
-
+updateGame(p1, p2, game)
 
 // ** Save intial isOver from the game object inside this variable **
 let gameState;
